@@ -81,16 +81,16 @@ class Contenedor {
 module.exports = Contenedor;
 
 
-let contenedor = new Contenedor(`/productos.txt`);
-async function test() {
-    const newProduct = {
-        title: `Producto`,
-        price: 11111,
-        thumbnail: `link`
-    };
-    await contenedor.save(newProduct);
-    console.table(await contenedor.getById(2));
-    console.table(await contenedor.getAll());
-    await contenedor.deleteById(6);
-}
-test();
+// let contenedor = new Contenedor(`/productos.txt`);
+// async function test() {
+//     const newProduct = {
+//         title: `Producto`,
+//         price: 11111,
+//         thumbnail: `link`
+//     };
+//     await contenedor.save(newProduct);
+//     console.table(await contenedor.getById(2));
+//     console.table(await contenedor.getAll());
+//     await contenedor.deleteById(6);
+// }
+// test();
