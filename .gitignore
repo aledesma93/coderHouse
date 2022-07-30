@@ -1,2 +1,4 @@
 
 nodeJS/
+*.cmd
+**/node_modules

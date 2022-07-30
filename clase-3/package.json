@@ -1,0 +1,15 @@
+{
+  "name": "test",
+  "version": "0.0.0",
+  "description": "random",
+  "main": "clase3.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "aledesma",
+  "license": "ISC",
+  "dependencies": {
+    "firebase": "^9.9.1",
+    "mongodb": "^4.8.1"
+  }
+}
