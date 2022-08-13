@@ -3,5 +3,5 @@ nodeJS/
 *.cmd
 **/node_modules
 ejs/
-	handlebarsjs/
-	pug/
+handlebarsjs/
+pug/
