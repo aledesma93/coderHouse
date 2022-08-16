@@ -44,9 +44,12 @@ app.get('/form', (req, res) => {
   res.render('form.pug', { title: 'Ingrese su Producto'});
 });
 
-app.post('/products',(req,res)=>{
-  console.log("hace algo")
+app.post('/products', (req, res) => {
   const {body}=req;
-  console.log(body);
-  return res.redirect(`/form`);
-})
+  console.log(req)
+  productsHC.push(body)
+  console.log(body)
+  // res.json(body)
+  res.redirect(301,'/products')
+  
+});
