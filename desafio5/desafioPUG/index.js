@@ -1,6 +1,7 @@
 const express = require('express');
 const app = express();
 const PORT = 8080;
+const pug = require('pug')
 
 const server = app.listen(PORT, () => {
   console.log(`Servidor http escuchando en el puerto ${server.address().port}`);
@@ -24,6 +25,7 @@ app.get('/hello', (req, res) => {
   res.render('hello.pug', { msg: 'Esto Funca' });
 });
 
+
 app.get('/products', (req, res) => {
   res.render('products.pug', { title: 'listado de perros', products: productsHC });
 });
@@ -45,11 +47,11 @@ app.get('/form', (req, res) => {
 });
 
 app.post('/products', (req, res) => {
-  const {body}=req;
-  console.log(req)
-  productsHC.push(body)
-  console.log(body)
-  // res.json(body)
-  res.redirect(301,'/products')
-  
+  // const {body}=req;
+  // console.log(req)
+  // productsHC.push(body)
+  // console.log(body)
+  // // res.json(body)
+  // res.redirect(301,'/products')
+  console.log("saludos")
 });
