@@ -198,5 +198,15 @@
     "precio": null,
     "stock": null,
     "id": 32
+  },
+  {
+    "timestamp": "Wed Sep 21 2022",
+    "nombre": "undefined",
+    "descripcion": "undefined",
+    "codigo": null,
+    "thumbnail": "http://localhost:8080/public/nike-ball.jpg",
+    "precio": null,
+    "stock": 50,
+    "id": 33
   }
 ]

@@ -59,10 +59,15 @@ app.use(express.static(`public`));
 //Routers import
 const productsRouter = require("./routes/productsRoutes");
 const cartRouter = require("./routes/cartRoutes");
+const routerProductos = require("./routes/productsRoutesMongo");
+const cartRouterFirestore = require("./routes/cartRoutesFirestore");
 
 //Routers
-app.use(`/api/products`, productsRouter);
-app.use(`/api/cart`, cartRouter);
+// app.use(`/api/products`, productsRouter);
+// app.use(`/api/cart`, cartRouter);
+//router mongo y firestore
+app.use(`/api/productsMongo`, routerProductos);
+app.use(`/api/cartFirestore`, cartRouterFirestore);
 
 app.use(express.static(`public`));
 let administrador=true;
