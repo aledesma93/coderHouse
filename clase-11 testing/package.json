@@ -1,0 +1,15 @@
+{
+  "name": "clase-11",
+  "version": "1.0.0",
+  "description": "server con express para mock",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "aledesma",
+  "license": "ISC",
+  "dependencies": {
+    "@faker-js/faker": "^7.5.0",
+    "express": "^4.18.1"
+  }
+}
