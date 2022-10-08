@@ -1,0 +1,16 @@
+{
+  "name": "servidores",
+  "version": "1.0.0",
+  "description": "clase 13",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "aledesma",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.0.3",
+    "minimist": "^1.2.6",
+    "yargs": "^17.6.0"
+  }
+}

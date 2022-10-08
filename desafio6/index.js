@@ -6,6 +6,7 @@ const httpServer= require("http").createServer(app);
 const io= require('socket.io')(httpServer,{
   cors: {origin: '*'},
 });
+import productosApiRouter from "./routes/product.js";
 
 httpServer.listen(PORT, () => {
   console.log(`Servidor http escuchando en el puerto`);
@@ -59,7 +60,7 @@ io.on('connection', (socket) => {
   });
 });
 
-
+app.use("/api/products-test", productosApiRouter);
 app.get('/', (req, res) => {
   res.render('productslist', { root: __dirname + '/public'});
 });

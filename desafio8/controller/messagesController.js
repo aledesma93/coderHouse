@@ -1,13 +1,18 @@
 import mongoose from "mongoose";
 import Messages from "../models/messageSchema.js";
+import * as dotenv from 'dotenv'
+dotenv.config();
+const URL =process.env.URL_MONGO;
+
 
 class MessagesController {
   constructor() {
     try {
       mongoose.connect(
-        "mongodb+srv://admin:admin@cluster0.ugciapi.mongodb.net/?retryWrites=true&w=majority"
+        URL
       ),
         { useNewUrlParser: true };
+       
     } catch (e) {
       console.log(e);
     }
