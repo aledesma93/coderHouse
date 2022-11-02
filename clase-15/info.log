@@ -1,0 +1,7 @@
+[2022-10-29T12:14:16.214] [TRACE] todos - Entering cheese testing
+[2022-10-29T12:14:16.218] [DEBUG] todos - Got cheese.
+[2022-10-29T12:14:16.219] [INFO] todos - Cheese is Comté.
+[2022-10-29T12:14:16.219] [WARN] todos - Cheese is quite smelly.
+[2022-10-29T12:14:16.220] [ERROR] todos - Cheese is too ripe!
+[2022-10-29T12:14:16.220] [FATAL] todos - Cheese was breeding ground for listeria.
+{"level":"error","message":"error message"}
