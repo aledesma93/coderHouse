@@ -78,6 +78,12 @@ const chatRouter = require(`./routers/chatRouter`);
 const fakerRouter = require(`./routers/fakerRouter`);
 const infoRouter = require(`./routers/infoRouter`);
 const infoRouterCompression = require(`./routers/infoRouterCompression`);
+const login2RouterGet = require(`./routers/login2RouterGet`);
+const signup2Router = require(`./routers/signup2Router`);
+const bienvenidaRouter = require(`./routers/bienvenidaRouter`);
+const errorLogRouter = require(`./routers/errorLogRouter`);
+const errorSignupRouter = require(`./routers/errorSignupRouter`);
+const logoutRouter = require(`./routers/logoutRouter`);
 //Routers
 app.use(`/`, homeRouter);
 app.use(`/form`, formRouter);
@@ -87,7 +93,12 @@ app.use(`/chat`, chatRouter);
 app.use(`/api/productos-test`, fakerRouter);
 app.use(`/info`, infoRouter);
 app.use(`/infoCompression`, infoRouterCompression);
-
+app.use(`/login2`, login2RouterGet);
+app.use(`/signup2`, signup2Router);
+app.use(`/bienvenida`, bienvenidaRouter);
+app.use(`/errorLog`, errorLogRouter);
+app.use(`/errorSignup`, errorSignupRouter);
+// app.use(`/logout`, logoutRouter);
 
 //Instancia contenedores:
 const storageMessages = new MessageDAOMongoDB();
@@ -216,8 +227,9 @@ app.get(`/errorSignup`, (req, res) => {
 
 app.get(`/logout`, (req, res) => {
     if (req.user) {
-        userLogout = req.user.username;
-        res.render(`logout`, { userLogout });
+        // userLogout = req.user.username;
+        // res.render(`logout`, { userLogout });
+        res.render(`logout`);
         req.session.destroy(err => {
             if (!err) {
                 console.log(`ok`)
@@ -226,7 +238,7 @@ app.get(`/logout`, (req, res) => {
             }
         });
     }
-    res.render(`errorLog`);
+    res.render(`logout`);
 });
 
 
