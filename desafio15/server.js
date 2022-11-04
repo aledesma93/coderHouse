@@ -17,6 +17,11 @@ app.set(`views`, `./views`);
 app.set(`view engine`, `ejs`);
 const parseArgs = require(`minimist`);
 const args = parseArgs(process.argv.slice(2));
+const log4js = require('./utils/logs');
+const loggerConsole = log4js.getLogger(`default`);
+const loggerArchiveWarn = log4js.getLogger(`warnArchive`);
+const loggerArchiveError = log4js.getLogger(`errorArchive`);
+
 
 // const PORT = 8081;
 // httpServer.listen(PORT, () => console.log(`Servidor escuchando el puerto ${PORT}`));
@@ -71,7 +76,8 @@ const loginRouterGet = require(`./routers/loginRouterGet`);
 const loginRouterPost = require(`./routers/loginRouterPost`);
 const chatRouter = require(`./routers/chatRouter`);
 const fakerRouter = require(`./routers/fakerRouter`);
-
+const infoRouter = require(`./routers/infoRouter`);
+const infoRouterCompression = require(`./routers/infoRouterCompression`);
 //Routers
 app.use(`/`, homeRouter);
 app.use(`/form`, formRouter);
@@ -79,6 +85,9 @@ app.use(`/login`, loginRouterGet);
 app.use(`/login`, loginRouterPost);
 app.use(`/chat`, chatRouter);
 app.use(`/api/productos-test`, fakerRouter);
+app.use(`/info`, infoRouter);
+app.use(`/infoCompression`, infoRouterCompression);
+
 
 //Instancia contenedores:
 const storageMessages = new MessageDAOMongoDB();
@@ -339,4 +348,20 @@ io.on(`connection`, socket => {
 
         io.sockets.emit(`users`, users);
     });
+});
+
+
+
+
+//Middlewares
+app.use((req, res, next) => {
+    loggerConsole.warn(`
+    Estado: 404
+    Ruta consultada: ${req.originalUrl}
+    Metodo ${req.method}`);
+
+    loggerArchiveWarn.warn(`Estado: 404, Ruta consultada: ${req.originalUrl}, Metodo ${req.method}`);
+
+    res.status(404).json({ error: -2, descripcion: `ruta ${req.originalUrl} metodo ${req.method} no implementada` });
+    next();
 });
