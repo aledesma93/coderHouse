@@ -1,0 +1,11 @@
+{
+  "name": "desafio16v2",
+  "version": "1.0.0",
+  "description": "se sube a heroku",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "aledesma",
+  "license": "ISC"
+}
