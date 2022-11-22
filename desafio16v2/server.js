@@ -98,7 +98,7 @@ app.use(`/signup2`, signup2Router);
 app.use(`/bienvenida`, bienvenidaRouter);
 app.use(`/errorLog`, errorLogRouter);
 app.use(`/errorSignup`, errorSignupRouter);
-// app.use(`/logout`, logoutRouter);
+app.use(`/logout`, logoutRouter);
 
 //Instancia contenedores:
 const storageMessages = new MessageDAOMongoDB();
